@@ -1,0 +1,61 @@
+// Primero coloca tus imports para dependencias externas, como 'sass:color'
+@use 'sass:color';
+
+// Luego, las importaciones de tus módulos SCSS internos
+@use './base/variables' as vars;
+@use './base/reset';
+@use './base/typography';
+@use './base/base';
+
+// Layout
+@use './layouts/container';
+@use './layouts/header';
+@use './layouts/footer';
+
+// Componentes
+@use './components/menu';
+@use './components/links';
+
+// Páginas
+@use './pages/index';
+@use './pages/ponentes';
+@use './pages/articulo';
+@use './pages/contacto';
+
+// Bootstrap
+@use './vendors/bootstrap';
+
+// A continuación, se definen capas de CSS con @layer
+
+@layer reset, base, layout, components, pages, bootstrap;
+
+
+@layer base {
+  // Los estilos dentro de esta capa serán aplicados como "base" o fundamentales
+  body {
+    background-color: vars.$bg-color;
+    color: vars.$main-color;
+  }
+}
+
+@layer layout {
+  // Estilos de layout pueden ir aquí
+  header {
+    background-color: vars.$accent-color;
+    padding: 2rem;
+  }
+}
+
+@layer components {
+  // Los estilos de componentes como el menú y los botones podrían ir aquí
+  .menu {
+    font-size: 1.2rem;
+  }
+}
+
+@layer pages {
+  // Los estilos de páginas específicas irían aquí
+  .home-page {
+    padding: 2rem;
+  }
+}

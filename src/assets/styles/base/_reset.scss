@@ -1,0 +1,12 @@
+
+$default-margin: 0;
+$default-padding: 0;
+$box-model: border-box;
+
+*,
+*::before,
+*::after {
+  margin: $default-margin;
+  padding: $default-padding;
+  box-sizing: $box-model;
+}

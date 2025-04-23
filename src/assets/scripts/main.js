@@ -1,16 +1,10 @@
-/**
- * Import dependencies from node_modules
- * see commented examples below
- */
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
 
-// import 'some-node-module';
-// import SomeModule from 'some-node-module';
-
-/**
- * Write any other JavaScript below
- */
-
-+( function() {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
-} )();
+  if (toggleBtn && navMenu) {
+    toggleBtn.addEventListener('click', function () {
+      navMenu.classList.toggle('open');
+    });
+  }
+});

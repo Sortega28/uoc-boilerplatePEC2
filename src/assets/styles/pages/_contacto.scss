@@ -1,0 +1,114 @@
+
+// src/assets/styles/style.scss
+@use '../base/variables' as vars;
+@use 'sass:color';
+
+
+main.contacto {
+  container-type: inline-size;
+  padding: 3rem 1rem;
+  background-color: vars.$bg-color;
+  color: vars.$main-color;
+  text-align: center;
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: vars.$light-color;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.001);
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+
+      // Modern pseudo-class selector
+      &:has(input:focus, textarea:focus) {
+        border-left: 4px solid vars.$accent-color;
+        padding-left: 1rem;
+      }
+    }
+
+    label {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: vars.$main-color;
+    }
+
+    input,
+    textarea {
+      padding: 1rem;
+      border-radius: 5px;
+      border: 2px solid vars.$bg-color;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: vars.$accent-color;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    // Bootstrap-style button
+    .submit-button {
+      align-self: center;
+      padding: 1rem 2rem;
+      background-color: vars.$accent-color;
+      color: vars.$light-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      // Modern pseudo-class grouping
+      :is(:hover, :focus-visible) {
+        box-shadow: 0 0 0 4px vars.$shadow-color;
+      }
+
+      &:hover {
+        background-color: vars.$accent-color;
+        transform: translateY(-2px);
+      }      
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      &:focus {
+        outline: 2px dashed vars.$main-color;
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  // Container Query
+  @container (max-width: 600px) {
+    .contact-form {
+      padding: 1.5rem;
+
+      label {
+        font-size: 1rem;
+      }
+
+      input,
+      textarea {
+        font-size: 0.95rem;
+      }
+
+      .submit-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+      }
+    }
+  }
+}

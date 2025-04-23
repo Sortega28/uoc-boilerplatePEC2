@@ -1,0 +1,14 @@
+@use 'variables' as vars;
+@import 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Serif:wght@600&display=swap';
+
+body {
+  font-family: vars.$sans-serif-font; 
+  background: vars.$bg-color;
+  color: vars.$main-color;
+}
+
+h1,
+h2,
+h3 {
+  font-family: vars.$serif-font;
+}

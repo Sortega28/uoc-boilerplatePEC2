@@ -1,0 +1,29 @@
+// Variables reutilizables
+$container-padding: 1rem;
+$container-padding-lg: 4rem;
+$container-max-width: 1140px;
+$breakpoint-lg: 992px;
+
+/* Container Helpers */
+.container,
+.container-fluid {
+  width: 100%;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  p {
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .container-fluid {
+    padding-left: $container-padding-lg;
+    padding-right: $container-padding-lg;
+  }
+
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+}

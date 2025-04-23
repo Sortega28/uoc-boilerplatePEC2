@@ -1,0 +1,241 @@
+// Variables reutilizables (se mantiene igual)
+$grey: rgb(98, 98, 98);
+$article-accent: rgb(88, 133, 1);
+$article-color: rgb(0, 59, 74);
+$blockquote-bg: rgb(244, 244, 244);
+$blockquote-accent: rgb(102, 102, 102);
+$highlight-bg: rgb(249, 249, 249);
+$highlight-headline: rgb(42, 77, 125);
+$light-color: rgb(255, 255, 255);
+$bg-color: rgb(247, 247, 247);
+
+main.articulo {
+  padding: 3rem 1rem;
+  line-height: 1.6;
+
+  .articulo-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    .header-image img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .header-content {
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $highlight-headline;
+      margin-bottom: 1rem;
+    }
+
+    .eslogan {
+      font-size: 1.5rem;
+      color: $grey;
+      margin-bottom: 2rem;
+    }
+
+    .introduccion-columns {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+
+      .column {
+        flex: 1;
+        text-align: justify;
+
+        // :is() para agrupar estilos
+        &:is(.eslogan-column) {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: $article-accent;
+        }
+
+        &:is(.texto-column) {
+          font-size: 1rem;
+          color: $article-color;
+        }
+      }
+    }
+
+    // :nth-child() para dar estilo especial al primer párrafo
+    p:nth-child(1) {
+      font-style: italic;
+    }
+
+    // :not() para evitar aplicar estilos a enlaces dentro del encabezado
+    a:not(.skip-link) {
+      color: #1a73e8;
+    }
+  }
+
+  .articulo-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+      transition: text-decoration 0.3s ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:has(img) {
+      background-color: $bg-color;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+
+      // :where() para simplificar especificidad
+      :where(h2, h3) {
+        color: $highlight-headline;
+      }
+    }
+  }
+
+  .articulo-image {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
+
+// :is() para agrupar h2 y h3
+:is(h2, h3) {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: $article-color;
+}
+
+// :not() para excluir listas con clase especial
+ul:not(.no-style),
+ol:not(.no-style) {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+
+  li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+blockquote {
+  font-style: italic;
+  background-color: $blockquote-bg;
+  padding: 1rem;
+  border-left: 4px solid $blockquote-accent;
+  margin: 2rem 0;
+  text-align: justify;
+
+  &.blockquote:has(ul) {
+    background-color: #e1f7d5;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+// Media Queries
+@media (width <= 768px) {
+  .articulo-header {
+    .header-image img {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .introduccion-columns {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .eslogan {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .articulo-content {
+    padding: 0 1rem;
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  h2,
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  ul,
+  ol {
+    margin-left: 1rem;
+  }
+}
+
+@media (width <= 480px) {
+  .articulo-header {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .eslogan {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .articulo-content p {
+    font-size: 0.9rem;
+  }
+}

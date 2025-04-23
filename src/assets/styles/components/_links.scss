@@ -1,0 +1,12 @@
+$main-color: rgb(0, 59, 74);
+$accent-color: rgb(88, 133, 1);
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $main-color;
+  }
+}

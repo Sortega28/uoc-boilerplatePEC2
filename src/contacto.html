@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jornadas Economía Circular</title>
+  <title>Contacto - Jornadas Economía Circular</title>
   <link rel="stylesheet" href="/src/assets/styles/style.css">
   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 </head>
@@ -21,7 +21,8 @@
         </button>
         <nav class="nav-menu">
           <ul>
-            <li class="active"><a href="ponentes.html">Ponentes</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="ponentes.html">Ponentes</a></li>
             <li><a href="articulo.html">Artículo</a></li>
             <li class="active"><a href="contacto.html">Contacto</a></li>
           </ul>
@@ -30,14 +31,32 @@
     </div>
   </header>
 
-  <main class="home">
-    <section class="poster">
-      <div class="poster-content">
-        <h1>¡Bienvenidos a las Jornadas de Economía Circular!</h1>
-        <p>Descubre un mundo de sostenibilidad y economía circular en nuestro evento anual.</p>
-        <a href="articulo.html" class="btn-primary">Leer más</a>
-      </div>
-    </section>
+  <main class="contacto">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p>Si tienes alguna duda o quieres obtener más información, no dudes en ponerte en contacto con nosotros.</p>
+      
+      <form name="contact" method="POST" data-netlify="true" class="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+        
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Enviar</button>
+      </form>
+    </div>
   </main>
 
   <footer>

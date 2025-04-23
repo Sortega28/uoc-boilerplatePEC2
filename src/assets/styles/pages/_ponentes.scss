@@ -1,0 +1,61 @@
+/* Ponentes page */
+main.ponentes {
+  padding-top: 5rem; /* Espacio debajo del header fijo */
+  margin-bottom: 3rem;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .ponentes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espacio entre los elementos */
+    gap: 2rem; /* Espacio entre los elementos de la retícula */
+
+    .ponente {
+      background: var(--light-color);
+      padding: 1rem;
+      width: calc(33.333% - 1.333rem); /* Ajusta el ancho para tres columnas */
+      box-sizing: border-box;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--grey);
+      }
+
+      &:hover {
+        transform: translateY(-10px); /* Levantar ligeramente el bloque */
+      }
+    }
+  }
+
+  // Media Queries para pantallas más pequeñas
+  @media (width <= 992px) {
+    .ponente {
+      width: calc(50% - 1rem); /* Dos elementos por fila en pantallas medianas */
+    }
+  }
+
+  @media (width <= 768px) {
+    .ponente {
+      width: 100%; /* Un elemento por fila en pantallas pequeñas */
+    }
+  }
+}
