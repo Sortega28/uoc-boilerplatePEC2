@@ -17,7 +17,7 @@
       "context": "browser",
       "publicUrl": "./",
       "source": "./docs/index.html",
-  "engines": {
+      "engines": {
         "browsers": "last 2 versions, > 0.5%, not dead"
       }
     }
@@ -35,6 +35,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.3",
     "autoprefixer": "^10.4.20",
+    "mise": "latest",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.13.3",
     "postcss": "^8.5.3",
@@ -46,15 +47,13 @@
     "sharp": "^0.33.5",
     "stylelint": "^16.18.0",
     "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-scss": "^6.11.1",
-    "mise": "latest"
+    "stylelint-scss": "^6.11.1"
   },
   "dependencies": {
     "@parcel/watcher": "^2.5.1",
     "bootstrap": "^5.3.5",
     "lightningcss": "^1.29.1"
   },
-
   "engines": {
     "node": ">=14.0.0"
   },
@@ -62,7 +61,6 @@
     "doc": "docs"
   },
   "optionalDependencies": {
-  "@parcel/watcher-linux-x64-glibc": "^2.5.1"
-}
-
+    "@parcel/watcher-linux-x64-glibc": "^2.5.1"
+  }
 }
