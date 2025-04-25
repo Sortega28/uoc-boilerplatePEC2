@@ -229,7 +229,7 @@ a:hover {
     height: 100vh;
   }
   main.home .poster {
-    background-image: url("/docs/assets/images/hero-image-home.jpg");
+    background-image: url("assets/images/hero-image-home.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
