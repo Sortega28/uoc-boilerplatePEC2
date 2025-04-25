@@ -17,7 +17,7 @@
       "context": "browser",
       "publicUrl": "./",
       "source": "./docs/index.html",
-      "engines": {
+  "engines": {
         "browsers": "last 2 versions, > 0.5%, not dead"
       }
     }
@@ -50,13 +50,19 @@
     "mise": "latest"
   },
   "dependencies": {
+    "@parcel/watcher": "^2.5.1",
     "bootstrap": "^5.3.5",
     "lightningcss": "^1.29.1"
   },
+
   "engines": {
     "node": ">=14.0.0"
   },
   "directories": {
     "doc": "docs"
-  }
+  },
+  "optionalDependencies": {
+  "@parcel/watcher-linux-x64-glibc": "^2.5.1"
+}
+
 }
