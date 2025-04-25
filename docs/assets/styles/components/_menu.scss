@@ -62,7 +62,7 @@ nav ul li a.selected {
 }
 
 /* Estilo responsive */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .menu-toggle {
     display: flex;
     flex-direction: column;

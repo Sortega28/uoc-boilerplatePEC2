@@ -102,7 +102,7 @@ main.articulo {
     }
 
     &:has(img) {
-      background-color: $bg-color;
+      background-color: $light-color;
       padding: 2rem;
       border-radius: 10px;
       margin-top: 2rem;
